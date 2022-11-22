@@ -6,8 +6,9 @@ from ruamel.yaml import YAML # use ruamel.yaml to preserve comments in config
 
 
 yaml = YAML()
-conf = user_config_dir('alacritty') + "/alacritty.yml"
-# Read alacritty config
+conf = os.getenv('HOME') + '/.config/alacritty/alacritty.yml'
+
+#  Read alacritty config
 with open(conf, 'r') as stream:
     data_loaded = yaml.load(stream)
 
